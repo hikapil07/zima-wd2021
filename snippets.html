@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Food Template</title>
+        <style>
+            .img-block {
+                height: 140px;
+                width: 200px;
+                overflow: hidden;
+                position: relative;
+                margin: 20px;
+                transition: all 0.5s;
+            }
+            .img-block img {
+                height: 140px;
+                width: 200px;
+                transition: all 0.5s;
+            }
+            .block-1:hover {
+                transform: scale(0.8);
+            }
+            .block-2:hover {
+                transform: scale(0.9);
+            }
+            .block-2:hover img {
+                transform: scale(1.5);
+            }
+            .block-3 p {
+                position: absolute;
+                bottom:-50px;
+                left:20px;
+                transition: all 0.5s;
+            }
+            .block-3:hover img {
+                /* transform:scaleY(0.8); */
+                /* transform-origin: top left; */
+                height: 100px;
+            }
+            .block-3:hover p {
+                bottom:0;
+            }
+            .block-4 {
+                /* overflow: visible; */
+            }
+            .block-4:after {
+                background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+                position: absolute;
+                content: " ";
+                left: 0;
+                bottom: -70px;
+                width: 100%;
+                height: 100px;
+                -webkit-transition: all 0.5s ease-in-out;
+                transition: all 0.5s ease-in-out;
+            }
+            .block-4:hover:after {
+                bottom:0;
+            }
+            .block-4 p {
+                position: absolute;
+                bottom:0;
+                opacity: 0;
+                color:#fff;
+                left:20px;
+                transition: all 0.5s;
+                z-index: 1;
+            }
+            .block-4:hover p {
+                opacity: 1;
+            }
+
+            a {
+                background-color: #a08e5f;
+                color: #fff;
+                padding: 10px 50px;
+                text-decoration: none;
+                border:1px solid #a08e5f;
+                position: relative;
+                transition: all 0.5s;
+                /* font-weight: bold; */
+                margin-right: 50px;
+            }
+            a.link1:hover {
+                background-color: #fff;
+                color: #a08e5f;
+                border:1px solid #a08e5f;
+            }
+            a.link2 {
+                background-color: transparent;
+                color: #a08e5f;
+                overflow: hidden;
+            }
+            a.link2:hover {
+                color: #fff;
+            }
+            a.link2:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #fff;
+                z-index: -2;
+                transition: all 0.5s;
+            }
+            a.link2:hover:before {
+                top:-100%;
+            }
+            a.link2:after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #a08e5f;
+                z-index: -2;
+                transition: all 0.5s;
+            }
+            a.link2:hover:after {
+                top:0;
+            }
+            a.link3 {
+                border: 5px solid #a08e5f;
+                outline: 5px solid #fff;
+            }
+            a.link3:hover {
+                border: 5px solid #fff;
+                outline: 5px solid #a08e5f;
+            }
+            a.link4 {
+                background-color: transparent;
+                border:none;
+                overflow: hidden;
+            }
+            a.link4:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 200%;
+                height: 100%;
+                /* background-color: red; */
+                background: linear-gradient(90deg, rgba(26,159,26,1) 0%, rgba(67,212,125,1) 50%, rgba(26,159,26,1) 100%);
+
+                z-index: -2;
+                transition: all 0.5s;
+            }
+            a.link4:hover:before {
+                left: -100%;
+            }
+
+            .ham_icon {
+                position: relative;
+                width: 100px;
+                height: 100px;
+                background: #333;
+            }
+            .ham_icon .icon_line {
+                position: absolute;
+                width: 90px;
+                height: 1px;
+                border-bottom: 1px solid #fff;
+                left: 5px;
+                transition: all 0.5s;
+            }
+            .ham_icon .icon_line:nth-child(1) {
+                top: 30px;
+            }
+            .ham_icon .icon_line:nth-child(2) {
+                top: 40px;
+            }
+            .ham_icon .icon_line:nth-child(3) {
+                top: 40px;
+            }
+            .ham_icon .icon_line:nth-child(4) {
+                top: 50px;
+            }
+            .ham_icon:hover .icon_line:nth-child(1),
+            .ham_icon:hover .icon_line:nth-child(4) {
+                opacity: 0;
+            }
+            .ham_icon:hover .icon_line:nth-child(2) {
+                transform: rotate(45deg);
+            }
+            .ham_icon:hover .icon_line:nth-child(3) {
+                transform: rotate(-45deg);
+            }
+        </style>
+    </head>
+    <body>
+        <div style="display: flex;">
+            <div class="img-block block-1"><img src="flower-1.jpg" /></div>
+            <div class="img-block block-2"><img src="flower-1.jpg" /></div>
+            <div class="img-block block-3">
+                <img src="flower-1.jpg" />
+                <p>Flower Name</p>
+            </div>
+            <div class="img-block block-4">
+                <img src="flower-1.jpg" />
+                <p>Flower Name</p>
+            </div>
+        </div>
+
+        <div style="display: flex; margin: 20px;">
+            <a class="link1" href="#">Sample link</a>
+            <a class="link2" href="#">Sample link</a>
+        </div>
+        <div style="display: flex; margin: 20px;">
+            <a class="link3" href="#">Sample link</a>
+        </div>
+        <div style="display: flex; margin: 20px;">
+            <a class="link4" href="#">Sample link</a>
+        </div>
+        <br/>
+        <div>
+            <h5>Hamburger Icon</h5>
+            <div class="ham_icon">
+                <span class="icon_line"></span>
+                <span class="icon_line"></span>
+                <span class="icon_line"></span>
+                <span class="icon_line"></span>
+            </div>
+        </div>
+    </body>
+</html>
